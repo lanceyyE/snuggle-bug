@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Shoes Collection</title>
+</head>
+
+<body style="margin:0;font-family:Arial;background:#f4f4f4;">
+
+<!BANNER>
+<table style="background:#00008B;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center;">
+<tr>
+<td style="font-size:30px;font-weight:bold;">
+Kids Shoes
+</td>
+<td >
+<div>
+<a href="snuggle bug .HTML" style="color:white;text-decoration:none;background:#444;padding:10px 20px;border-radius:5px;margin-right:10px;">Home</a>
+
+
+</div>
+
+</td>
+
+</tr>
+</table>
+
+<p style="text-align:center;color:gray;">
+Choose your favourite shoes.
+</p>
+
+<!-- PRODUCTS -->
+
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;padding:30px;">
+
+<!-- PRODUCT 1 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="ecc.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>pinky</h2>
+
+<h1 style="color:green;">RR180</h1>
+
+<button onclick="addToCart('pinky',R180,'ecc.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="acc.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>peachy</h2>
+
+<h1 style="color:green;">R140</h1>
+
+<button onclick="addToCart('peachy ',R140,'acc.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="baby12.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>all rainbow</h2>
+
+<h1 style="color:green;">R140</h1>
+
+<button onclick="addToCart('all rainbow',140,'baby12.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+
+<!-- PRODUCT 4 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="baby14.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>all purple</h2>
+
+<h1 style="color:green;">R180</h1>
+
+<button onclick="addToCart('all purple',180,'baby14.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+<!-- PRODUCT 5 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="baby15.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>Rainbow hat</h2>
+
+<h1 style="color:green;">R70</h1>
+
+<button onclick="addToCart('Rainbow hat',70,'baby15.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+<!-- PRODUCT 6 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="baby8.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>red hat</h2>
+
+<h1 style="color:green;">R70</h1>
+
+<button onclick="addToCart('red hat ',70,'baby8.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+<!-- PRODUCT 7 -->
+
+<div style="width:260px;background:white;border-radius:10px;padding:15px;text-align:center;box-shadow:0 0 10px rgba(0,0,0,.15);">
+
+<img src="hat.jpg" style="width:220px;height:220px;object-fit:cover;border-radius:8px;">
+
+<h2>white hat</h2>
+
+<h1 style="color:green;">R70</h1>
+
+<button onclick="addToCart('white hat',70,'hat.jpg')" style="background:#00008B;color:white;border:none;padding:12px 25px;border-radius:5px;cursor:pointer;">
+Add to Cart
+</button>
+
+</div>
+</div>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name,price,image){
+
+let found = cart.find(item => item.name===name);
+
+if(found){
+
+found.quantity++;
+
+}else{
+
+cart.push({
+name:name,
+price:price,
+image:image,
+quantity:1
+});
+
+}
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert(name + " added to cart!");
+
+}
+
+</script>
+
+<a href="shopping cart.html" style="color:white;text-decoration:none;background:lightgreen;padding:10px 20px;border-radius:5px;text-align:center;">Cart</a>
+<div style="background-color: navy; color: white; text-align: center; padding: 10px 20px; font-size: 14px;">
+  &copy; 2024 Snuggle Bug. All rights reserved.
+</div>	
+</body>
+</html>
